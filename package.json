@@ -6,7 +6,7 @@
   "author": "qier222<qier222@outlook.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "yarn install && yarn run build",
     "lint": "vue-cli-service lint",
     "electron:build": "vue-cli-service electron:build -p never",
     "electron:build-all": "vue-cli-service electron:build -p never -mwl",
@@ -19,7 +19,8 @@
     "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps",
     "prettier": "npx prettier --write ./src",
-    "netease_api:run": "npx NeteaseCloudMusicApi"
+    "netease_api:run": "npx NeteaseCloudMusicApi",
+    "prebuild": "node -v | grep -q 'v16\\|v18\\|v20' || (echo 'Node version not supported' && exit 1)"
   },
   "main": "background.js",
   "engines": {
@@ -100,7 +101,8 @@
   "resolutions": {
     "icon-gen": "3.0.0",
     "degenerator": "2.2.0",
-    "electron-builder": "^23.0.0"
+    "electron-builder": "^23.0.0",
+    "corepack": "^0.20.0"
   },
   "eslintConfig": {
     "root": true,
@@ -131,11 +133,5 @@
     "hooks": {
       "pre-commit": "npm run prettier"
     }
-  }
-}
-{
-  "scripts": {
-    "prebuild": "node -v | grep -q 'v16\\|v18\\|v20' || (echo 'Node version not supported' && exit 1)",
-    "build": "yarn install && yarn run build"
   }
 }
