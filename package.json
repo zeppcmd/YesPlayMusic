@@ -24,7 +24,8 @@
   },
   "main": "background.js",
   "engines": {
-    "node": "16 || 18 || 20"
+    "node": ">=16.0.0 <25.0.0",
+    "yarn": ">=1.22.0"
   },
   "dependencies": {
     "@unblockneteasemusic/rust-napi": "^0.4.0",
