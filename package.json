@@ -4,12 +4,9 @@
   "private": true,
   "description": "A third party music player for Netease Music",
   "author": "qier222<qier222@outlook.com>",
-  "engines": {
-    "node": "16.x"
-  },
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build",
+    "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "electron:build": "vue-cli-service electron:build -p never",
     "electron:build-all": "vue-cli-service electron:build -p never -mwl",
@@ -19,12 +16,15 @@
     "electron:serve": "vue-cli-service electron:serve",
     "electron:buildicon": "electron-icon-builder --input=./build/icons/icon.png --output=build --flatten",
     "electron:publish": "vue-cli-service electron:build -mwl -p always",
-    "postinstall": "echo 'Skipping optional dependencies'",
+    "postinstall": "electron-builder install-app-deps",
     "postuninstall": "electron-builder install-app-deps",
     "prettier": "npx prettier --write ./src",
     "netease_api:run": "npx NeteaseCloudMusicApi"
   },
   "main": "background.js",
+  "engines": {
+    "node": "14 || 16"
+  },
   "dependencies": {
     "@unblockneteasemusic/rust-napi": "^0.4.0",
     "NeteaseCloudMusicApi": "^4.23.3",
@@ -98,9 +98,9 @@
     "vue-template-compiler": "^2.6.11"
   },
   "resolutions": {
-    "@achrinza/node-ipc": "^10.1.0",  
     "icon-gen": "3.0.0",
-    "degenerator": "2.2.0"
+    "degenerator": "2.2.0",
+    "electron-builder": "^23.0.0"
   },
   "eslintConfig": {
     "root": true,
