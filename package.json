@@ -20,6 +20,7 @@
     "postuninstall": "electron-builder install-app-deps",
     "prettier": "npx prettier --write ./src",
     "netease_api:run": "npx NeteaseCloudMusicApi"
+    "build": "NODE_OPTIONS=--openssl-legacy-provider vue-cli-service build"
   },
   "main": "background.js",
   "engines": {
