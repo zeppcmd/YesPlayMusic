@@ -6,3 +6,9 @@
     }
   ]
 }
+{
+  "buildCommand": "yarn cache clean && yarn install && yarn build",
+  "rewrites": [
+    { "source": "/api/:match*", "destination": "https://你的网易云API地址/:match*" }
+  ]
+}
