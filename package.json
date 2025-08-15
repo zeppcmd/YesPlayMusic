@@ -101,7 +101,7 @@
   "@achrinza/node-ipc": "^10.1.0",  
   "icon-gen": "3.0.0",
   "degenerator": "2.2.0"
-}},
+},
   "eslintConfig": {
     "root": true,
     "env": {
