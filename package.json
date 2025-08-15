@@ -133,3 +133,9 @@
     }
   }
 }
+{
+  "scripts": {
+    "prebuild": "node -v | grep -q 'v16\\|v18\\|v20' || (echo 'Node version not supported' && exit 1)",
+    "build": "yarn install && yarn run build"
+  }
+}
